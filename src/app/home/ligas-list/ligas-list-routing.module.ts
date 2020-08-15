@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./ligas-add/ligas-add.module').then( m => m.LigasAddPageModule)
   },
   {
-    path: 'ligas-info',
+    path: ':info',
     loadChildren: () => import('./ligas-info/ligas-info.module').then( m => m.LigasInfoPageModule)
   }
 ];

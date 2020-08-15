@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {EquiposService} from '../../services/equipos.service';
+import {Observable} from 'rxjs';
+import {Equipos} from '../../model/equipos.model';
 
 @Component({
   selector: 'app-equipos-list',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquiposListPage implements OnInit {
 
-  constructor() { }
+  private equipos: Observable<Equipos[]>
+  constructor(private equiposService: EquiposService) { }
 
   ngOnInit() {
+    this.equipos = this.equiposService.getEquipos();
   }
 
 }

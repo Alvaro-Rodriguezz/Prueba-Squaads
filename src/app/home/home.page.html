@@ -5,5 +5,9 @@
 </ion-header>
 
 <ion-content>
-<h3>Estamos en el home</h3>
+<ion-list>
+  <ion-item [routerLink]="['/home/jugadores-list']"><h4>Jugadores</h4></ion-item>
+  <ion-item [routerLink]="['/home/equipos-list']"><h4>Equipos</h4></ion-item>
+  <ion-item [routerLink]="['/home/ligas-list']"><h4>Ligas</h4></ion-item>
+</ion-list>
 </ion-content>

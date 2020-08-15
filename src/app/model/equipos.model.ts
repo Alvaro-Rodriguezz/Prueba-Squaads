@@ -1,4 +1,5 @@
-export class EquiposModel {
+export class Equipos {
     Nombre: string;
     Liga: string;
+    id?: string;
 }

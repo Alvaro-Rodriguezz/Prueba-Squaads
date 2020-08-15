@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {Jugadores} from '../../model/jugadores.model';
+import {JugadoresService} from '../../services/jugadores.service';
 
 @Component({
   selector: 'app-jugadores-list',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JugadoresListPage implements OnInit {
 
-  constructor() { }
+  private jugadores: Observable<Jugadores[]>;
+  constructor(private jugadoresService: JugadoresService) { }
 
   ngOnInit() {
+    this.jugadores = this.jugadoresService.getJugadores();
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {LigasService} from '../../services/ligas.service';
+import {Observable} from 'rxjs';
+import {Ligas} from '../../model/ligas.model';
 
 @Component({
   selector: 'app-ligas-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LigasListPage implements OnInit {
 
-  constructor() { }
+  private ligas: Observable<Ligas[]>;
+  constructor(private ligasService: LigasService) { }
 
   ngOnInit() {
+    this.ligas = this.ligasService.getLigas();
+    console.log(this.ligas);
   }
 
 }

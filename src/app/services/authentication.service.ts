@@ -12,6 +12,7 @@ export class AuthenticateService {
         afAuth.authState.subscribe(user => (this.isLogged = user));
     }
 
+
     loginUser(value) {
         return new Promise<any>((resolve, reject) => {
             firebase.auth().signInWithEmailAndPassword(value.email, value.password)
