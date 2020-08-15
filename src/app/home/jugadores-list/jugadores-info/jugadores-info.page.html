@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>jugadoresInfo</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{jugador.Nombre}} &nbsp; {{jugador.Apellidos}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-img src="{{jugador.Foto}}" style="width: 100%"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item>
+    <ion-label button position="stacked" [routerLink]="['/home/equipos-list', jugador.Equipo]">Equipo</ion-label>
+    <ion-input [(ngModel)]="jugador.Equipo"></ion-input>
+  </ion-item>
 </ion-content>
+<ion-footer>
+  <ion-button color="secondary" expand="full">Actualizar</ion-button>
+  <ion-button color="danger" expand="full">Eliminar</ion-button>
+</ion-footer>

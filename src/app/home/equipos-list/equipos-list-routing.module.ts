@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./equipos-add/equipos-add.module').then( m => m.EquiposAddPageModule)
   },
   {
-    path: 'equipos-info',
+    path: ':info',
     loadChildren: () => import('./equipos-info/equipos-info.module').then( m => m.EquiposInfoPageModule)
   }
 ];

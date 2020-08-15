@@ -13,7 +13,18 @@ export class EquiposService {
     private equiposCollection: AngularFirestoreCollection<Equipos>;
     constructor(private angularFirestore: AngularFirestore) {
         this.equiposCollection = this.angularFirestore.collection<Equipos>('Equipos');
-        this.Equipos = this.equiposCollection.snapshotChanges().pipe(
+        this.Equipos = this.getData();
+    }
+
+    getEquipoOfLiga(liga: string): Observable<Equipos[]>{
+        this.equiposCollection = this.angularFirestore.collection<Equipos>('Equipos', ref => {
+            return ref.where('Liga', '==', liga);
+        });
+        return this.getData();
+    }
+
+    getData(){
+        return this.equiposCollection.snapshotChanges().pipe(
             map(actions => {
                 return actions.map(a => {
                     const data = a.payload.doc.data();

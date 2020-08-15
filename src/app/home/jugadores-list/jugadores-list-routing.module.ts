@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./jugadores-add/jugadores-add.module').then( m => m.JugadoresAddPageModule)
   },
   {
-    path: 'jugadores-info',
+    path: ':id',
     loadChildren: () => import('./jugadores-info/jugadores-info.module').then( m => m.JugadoresInfoPageModule)
   }
 ];
