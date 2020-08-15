@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { JugadoresAddPageRoutingModule } from './jugadores-add-routing.module';
 
-import { HomePage } from './home.page';
+import { JugadoresAddPage } from './jugadores-add.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    JugadoresAddPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [JugadoresAddPage]
 })
-export class HomePageModule {}
+export class JugadoresAddPageModule {}
