@@ -17,7 +17,8 @@ export class JugadoresInfoPage implements OnInit {
     Apellidos: '',
     Equipo: '',
     Numero: 2,
-    Foto: ''
+    Foto: '',
+    EquipoId: ''
   }
 
   constructor(private activatedRoute: ActivatedRoute,

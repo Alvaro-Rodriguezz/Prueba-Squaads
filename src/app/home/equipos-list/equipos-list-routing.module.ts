@@ -13,9 +13,9 @@ const routes: Routes = [
     loadChildren: () => import('./equipos-add/equipos-add.module').then( m => m.EquiposAddPageModule)
   },
   {
-    path: ':info',
+    path: ':id',
     loadChildren: () => import('./equipos-info/equipos-info.module').then( m => m.EquiposInfoPageModule)
-  }
+  },
 ];
 
 @NgModule({

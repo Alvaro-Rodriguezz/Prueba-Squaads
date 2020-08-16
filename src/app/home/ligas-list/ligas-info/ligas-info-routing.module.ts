@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: LigasInfoPage
+  },
+  {
+    path: ':nombre',
+    loadChildren: () => import('./liga-equipos/liga-equipos.module').then(m => m.LigaEquiposPageModule)
   }
 ];
 

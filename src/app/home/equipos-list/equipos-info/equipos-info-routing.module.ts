@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,6 +8,10 @@ const routes: Routes = [
   {
     path: '',
     component: EquiposInfoPage
+  },
+  {
+    path: ':nombre',
+    loadChildren: () => import('./equipo-jugadores/equipo-jugadores.module').then( m => m.EquipoJugadoresPageModule)
   }
 ];
 

@@ -9,6 +9,6 @@
 
 <ion-content>
 <ion-list>
-  <ion-item *ngFor="let liga of (ligas | async)" [routerLink]="['/home/ligas-list', liga.Nombre]">{{liga.Nombre}}</ion-item>
+  <ion-item *ngFor="let liga of (ligas | async)" [routerLink]="['/home/ligas-list', liga.id]" (click)="test(liga.Nombre)">{{liga.Nombre}}</ion-item>
 </ion-list>
 </ion-content>

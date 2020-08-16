@@ -5,4 +5,5 @@ export class Jugadores{
     Equipo: string;
     Foto: string;
     id?: string;
+    EquipoId: string;
 }

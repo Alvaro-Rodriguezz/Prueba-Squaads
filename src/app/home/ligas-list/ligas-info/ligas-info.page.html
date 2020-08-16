@@ -3,12 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">{{ligaNombre}}</ion-title>
+    <ion-title class="ion-text-center">{{liga.Nombre}}</ion-title>
+    <ion-button  slot="end" [routerLink]="['/home']" large>
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let equipo of (equipos | async)" [routerLink]="['/home/equipos-list', equipo.Nombre]">{{equipo.Nombre}}</ion-item>
-  </ion-list>
+  <ion-item>
+    <ion-label button position="stacked">Nombre de la liga</ion-label>
+    <ion-input [(ngModel)]="liga.Nombre"></ion-input>
+  </ion-item>
+
+  <ion-button [routerLink]="['/home/ligas-list/ligas-info', liga.Nombre]">Ver Equipos</ion-button>
+
 </ion-content>

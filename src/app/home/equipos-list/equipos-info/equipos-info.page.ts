@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {JugadoresService} from '../../../services/jugadores.service';
-import {Jugadores} from '../../../model/jugadores.model';
+import {Equipos} from '../../../model/equipos.model';
+import {EquiposService} from '../../../services/equipos.service';
 
 @Component({
   selector: 'app-equipos-info',
@@ -11,12 +11,18 @@ import {Jugadores} from '../../../model/jugadores.model';
 })
 export class EquiposInfoPage implements OnInit {
 
-  equipoNombre: string = this.activatedRoute.snapshot.paramMap.get('info');
-  private jugadores: Observable<Jugadores[]>;
+  equipoId: string = this.activatedRoute.snapshot.paramMap.get('id');
+  equipo: Equipos = {
+    Nombre: '',
+    Liga: '',
+    LigaId: ''
+  }
   constructor(private activatedRoute: ActivatedRoute,
-              private jugadoresService: JugadoresService) { }
+              private equiposService: EquiposService) { }
 
   ngOnInit() {
-    this.jugadores = this.jugadoresService.getJugadoresOfEquipo(this.equipoNombre);
+    this.equiposService.getEquipoId(this.equipoId).subscribe(equipo => {
+      this.equipo = equipo;
+    });
   }
 }

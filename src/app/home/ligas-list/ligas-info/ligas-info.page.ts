@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Equipos} from '../../../model/equipos.model';
-import {Observable} from 'rxjs';
-import {EquiposService} from '../../../services/equipos.service';
+import {LigasService} from '../../../services/ligas.service';
+import {Ligas} from '../../../model/ligas.model';
 
 @Component({
   selector: 'app-ligas-info',
@@ -11,13 +10,18 @@ import {EquiposService} from '../../../services/equipos.service';
 })
 export class LigasInfoPage implements OnInit {
 
-  ligaNombre: string = this.activatedRoute.snapshot.paramMap.get('info');
-  private equipos: Observable<Equipos[]>;
+  ligaNombre: string = this.activatedRoute.snapshot.paramMap.get('nombre');
+  liga: Ligas = {
+    Nombre: ''
+  }
+
   constructor(private activatedRoute: ActivatedRoute,
-              private equiposService: EquiposService) { }
+              private ligasService: LigasService) { }
 
   ngOnInit() {
-    this.equipos = this.equiposService.getEquipoOfLiga(this.ligaNombre);
+    this.ligasService.getLigaId(this.ligaNombre).subscribe(liga => {
+      this.liga = liga;
+    });
   }
 
 }

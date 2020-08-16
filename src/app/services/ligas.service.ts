@@ -30,11 +30,29 @@ export class LigasService {
         return this.Ligas;
     }
 
-    getLigaNombre(Nombre: string): Observable<Ligas> {
-        return this.ligasCollection.doc<Ligas>(Nombre).valueChanges().pipe(
+    getLigaId(id: string): Observable<Ligas> {
+        console.log(id);
+        return this.ligasCollection.doc<Ligas>(id).valueChanges().pipe(
             take(1),
             map(liga => {
+                console.log('*');
+                console.log(liga)
+                console.log('---');
+                console.log(liga.Nombre)
+                liga.id = id;
+                return liga;
+            })
+        );
+    }
+
+    getLigaNombre(Nombre: string): Observable<Ligas> {
+        console.log('*' + Nombre + '*');
+        return this.ligasCollection.doc<Ligas>().valueChanges().pipe(
+            take(1),
+            map(liga => {
+                console.log(liga.Nombre)
                 liga.Nombre = Nombre;
+                console.log(liga.Nombre)
                 return liga;
             })
         );

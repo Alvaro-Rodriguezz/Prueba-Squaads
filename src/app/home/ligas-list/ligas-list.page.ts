@@ -18,4 +18,7 @@ export class LigasListPage implements OnInit {
     console.log(this.ligas);
   }
 
+  test(tes: string){
+    console.log(tes);
+  }
 }

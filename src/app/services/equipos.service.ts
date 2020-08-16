@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
-import {map} from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 import {Equipos} from '../model/equipos.model';
 
 
@@ -35,6 +35,15 @@ export class EquiposService {
         );
     }
 
+    getEquipoId(id: string): Observable<Equipos> {
+        return this.equiposCollection.doc<Equipos>(id).valueChanges().pipe(
+            take(1),
+            map(equipo => {
+                equipo.id = id;
+                return equipo;
+            })
+        );
+    }
     getEquipos(){
         return this.Equipos;
     }

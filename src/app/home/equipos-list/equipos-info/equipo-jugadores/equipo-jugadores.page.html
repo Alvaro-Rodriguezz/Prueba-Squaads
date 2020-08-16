@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Lista de equipos</ion-title>
+    <ion-title class="ion-text-center">{{equipoNombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let equipo of (equipos | async)" [routerLink]="['/home/equipos-list', equipo.id]">{{equipo.Nombre}}</ion-item>
+    <ion-item *ngFor="let jugador of (jugadores | async)" [routerLink]="['/home/jugadores-list', jugador.id]">{{jugador.Nombre}}</ion-item>
   </ion-list>
 </ion-content>
