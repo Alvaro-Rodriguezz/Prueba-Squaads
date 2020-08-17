@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
     providedIn: 'root'
 })
 export class LigasService {
+    temp: any;
     private Ligas: Observable<Ligas[]>;
     private ligasCollection: AngularFirestoreCollection<Ligas>;
     constructor(private angularFirestore: AngularFirestore) {
@@ -64,5 +65,13 @@ export class LigasService {
 
     deleteLiga(id: string): Promise<void>{
         return this.ligasCollection.doc(id).delete();
+    }
+
+    setTemp(temp: any){
+        this.temp = temp;
+    }
+
+    getTemp(){
+        return this.temp;
     }
 }

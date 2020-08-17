@@ -42,6 +42,10 @@ export class LigasInfoPage implements OnInit {
       const msg = 'Error: ' + err;
       this.showToast(msg);
     });
-
   }
+
+  guardarLigaId(){
+    this.ligasService.setTemp(this.liga.id);
+  }
+
 }

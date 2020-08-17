@@ -29,4 +29,8 @@ export class JugadoresInfoPage implements OnInit {
       this.jugador = jugador;
     });
   }
+
+  eliminarJugador(){
+    this.jugadoresService.deleteJugador(this.jugador.id);
+  }
 }
