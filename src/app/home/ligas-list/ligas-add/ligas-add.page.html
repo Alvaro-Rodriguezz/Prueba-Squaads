@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir liga</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Nombre</ion-label>
+    <ion-input [(ngModel)]="liga.Nombre" required></ion-input>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-button color="secondary" expand="full" (click)="add()">Añadir</ion-button>
+</ion-footer>

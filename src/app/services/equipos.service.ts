@@ -9,6 +9,7 @@ import {Equipos} from '../model/equipos.model';
     providedIn: 'root'
 })
 export class EquiposService {
+    private guardado: any;
     private Equipos: Observable<Equipos[]>;
     private equiposCollection: AngularFirestoreCollection<Equipos>;
     constructor(private angularFirestore: AngularFirestore) {
@@ -46,5 +47,13 @@ export class EquiposService {
     }
     getEquipos(){
         return this.Equipos;
+    }
+
+    setGuardado(elemento: any){
+        this.guardado = elemento;
+    }
+
+    getGuardado(){
+        return this.guardado;
     }
 }

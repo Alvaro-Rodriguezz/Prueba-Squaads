@@ -16,7 +16,7 @@ export class JugadoresInfoPage implements OnInit {
     Nombre: '',
     Apellidos: '',
     Equipo: '',
-    Numero: 2,
+    Numero: '',
     Foto: '',
     EquipoId: ''
   }

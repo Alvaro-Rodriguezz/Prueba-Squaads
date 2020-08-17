@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'jugadores-add',
-    loadChildren: () => import('../Add/jugadores-add/jugadores-add.module').then(m => m.JugadoresAddPageModule)
+    loadChildren: () => import('../equipos-list/equipos-info/equipo-jugadores/jugadores-add/jugadores-add.module').then(m => m.JugadoresAddPageModule)
   },
   {
     path: ':id',

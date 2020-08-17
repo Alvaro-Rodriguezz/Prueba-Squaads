@@ -1,7 +1,7 @@
 export class Jugadores{
     Nombre: string;
     Apellidos: string;
-    Numero: number;
+    Numero: string;
     Equipo: string;
     Foto: string;
     id?: string;

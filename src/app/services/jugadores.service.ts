@@ -3,6 +3,8 @@ import {Observable} from 'rxjs';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {map, take} from 'rxjs/operators';
 import {Jugadores} from '../model/jugadores.model';
+import DocumentReference = firebase.firestore.DocumentReference;
+import * as firebase from 'firebase';
 
 
 @Injectable({
@@ -53,5 +55,13 @@ export class JugadoresService {
 
     getJugadores(){
         return this.Jugadores;
+    }
+
+    addJugador(jugador: Jugadores): Promise<DocumentReference>{
+        return this.jugadoresCollection.add(jugador);
+    }
+
+    deleteJugador(id: string): Promise<void>{
+        return this.jugadoresCollection.doc(id).delete();
     }
 }

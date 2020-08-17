@@ -31,4 +31,8 @@ export class EquipoJugadoresPage implements OnInit {
       this.equipo = equipo;
     });
   }
+
+  guardar(){
+    this.equiposService.setGuardado(this.equipo.Nombre);
+  }
 }

@@ -11,4 +11,9 @@
 <ion-list>
   <ion-item *ngFor="let liga of (ligas | async)" [routerLink]="['/home/ligas-list', liga.id]" (click)="test(liga.Nombre)">{{liga.Nombre}}</ion-item>
 </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/home/ligas-list/ligas-add']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
