@@ -15,6 +15,6 @@
     <ion-label button position="stacked">Nombre del equipo</ion-label>
     <ion-input [(ngModel)]="equipo.Nombre"></ion-input>
   </ion-item>
-  <ion-button [routerLink]="['/home/equipos-list/equipos-info', equipo.Nombre]">Ver jugadores</ion-button>
+  <ion-button [routerLink]="['/home/equipos-list/equipos-info', equipo.id]">Ver jugadores</ion-button>
   <ion-button [routerLink]="['/home/ligas-list', equipo.LigaId]">Ver liga</ion-button>
 </ion-content>

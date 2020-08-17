@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'ligas-add',
-    loadChildren: () => import('./ligas-add/ligas-add.module').then( m => m.LigasAddPageModule)
+    loadChildren: () => import('../Add/ligas-add/ligas-add.module').then(m => m.LigasAddPageModule)
   },
   {
     path: ':nombre',

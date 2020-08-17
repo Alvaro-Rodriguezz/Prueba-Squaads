@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'equipos-add',
-    loadChildren: () => import('./equipos-add/equipos-add.module').then( m => m.EquiposAddPageModule)
+    loadChildren: () => import('../Add/equipos-add/equipos-add.module').then(m => m.EquiposAddPageModule)
   },
   {
     path: ':id',

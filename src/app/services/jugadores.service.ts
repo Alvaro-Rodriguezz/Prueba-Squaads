@@ -23,9 +23,9 @@ export class JugadoresService {
             })
         );
     }
-    getJugadoresOfEquipo(equipo: string): Observable<Jugadores[]>{
+    getJugadoresOfEquipo(equipoId: string): Observable<Jugadores[]>{
         this.jugadoresCollection = this.angularFirestore.collection<Jugadores>('Jugadores', ref => {
-            return ref.where('Equipo', '==', equipo);
+            return ref.where('EquipoId', '==', equipoId);
         });
         return this.getData();
     }
