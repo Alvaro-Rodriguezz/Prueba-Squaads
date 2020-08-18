@@ -10,11 +10,15 @@ import {JugadoresService} from '../../services/jugadores.service';
 })
 export class JugadoresListPage implements OnInit {
 
-  private jugadores: Observable<Jugadores[]>;
+  loaded = false;
+  private jugadores: Jugadores[];
   constructor(private jugadoresService: JugadoresService) { }
 
   ngOnInit() {
-    this.jugadores = this.jugadoresService.getJugadores();
+    this.jugadoresService.getJugadores().subscribe(jugador => {
+    this.jugadores = jugador;
+    console.log(this.jugadores);
+    this.loaded = true; });
   }
 
 }

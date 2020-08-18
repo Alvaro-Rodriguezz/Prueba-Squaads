@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { JugadoresListPageRoutingModule } from './jugadores-list-routing.module';
 
 import { JugadoresListPage } from './jugadores-list.page';
+import { JugadoresPipePipe } from './jugadores-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { JugadoresListPage } from './jugadores-list.page';
     IonicModule,
     JugadoresListPageRoutingModule
   ],
-  declarations: [JugadoresListPage]
+  declarations: [JugadoresListPage, JugadoresPipePipe]
 })
 export class JugadoresListPageModule {}
