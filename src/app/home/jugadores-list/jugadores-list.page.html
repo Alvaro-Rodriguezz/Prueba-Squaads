@@ -21,7 +21,7 @@
     <ion-searchbar [(ngModel)]="pipeArg2" showCancelButton="focus"></ion-searchbar>
     <ion-item *ngFor="let jugador of (jugadores | jugadoresPipe: pipeArg1:pipeArg2)" [routerLink]="['/home/jugadores-list', jugador.id]">
       <ion-avatar><img src="{{jugador.Foto}}"></ion-avatar>
-      &nbsp;{{jugador.Nombre}}
+      &nbsp;{{jugador.Nombre}} {{jugador.Apellidos}}
     </ion-item>
   </ion-list>
 </ion-content>

@@ -9,7 +9,10 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let jugador of (jugadores | async)" [routerLink]="['/home/jugadores-list', jugador.id]">{{jugador.Nombre}}</ion-item>
+    <ion-item *ngFor="let jugador of (jugadores | async)" [routerLink]="['/home/jugadores-list', jugador.id]">
+      <ion-avatar><img src="{{jugador.Foto}}"></ion-avatar>
+      &nbsp;{{jugador.Nombre}} {{jugador.Apellidos}}
+    </ion-item>
   </ion-list>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">

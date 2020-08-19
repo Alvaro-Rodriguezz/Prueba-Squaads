@@ -18,10 +18,11 @@ export class JugadoresListPage implements OnInit {
 
   ngOnInit() {
     this.jugadoresService.getJugadores().subscribe(jugador => {
-    this.jugadores = jugador;
-    this.pipeArg1 = 'Nombre';
-    this.pipeArg2 = ''
-    this.loaded = true; });
+      this.jugadores = jugador;
+      this.pipeArg1 = 'Nombre';
+      this.pipeArg2 = ''
+      this.loaded = true;
+    });
   }
 
 
