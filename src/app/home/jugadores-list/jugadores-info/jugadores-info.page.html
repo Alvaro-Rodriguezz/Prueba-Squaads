@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-button  slot="end" [routerLink]="['/home']" large>
+    <ion-button  slot="end" [routerLink]="['/home']">
       <ion-icon name="home-outline"></ion-icon>
     </ion-button>
     <ion-title class="ion-text-center">{{jugador.Nombre}} &nbsp; {{jugador.Apellidos}}</ion-title>
@@ -14,12 +14,12 @@
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col>
-        <ion-img src="{{jugador.Foto}}" style="width: 100%"></ion-img>
+        <ion-img src="{{jugador.Foto}}" alt="Foto del jugador" style="width: 100%"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-item>
-    <ion-label button position="stacked" [routerLink]="['/home/equipos-list', jugador.Equipo]">Equipo</ion-label>
+    <ion-label  position="stacked">Equipo</ion-label>
     <ion-input [(ngModel)]="jugador.Equipo"></ion-input>
   </ion-item>
   <ion-button [routerLink]="['/home/equipos-list', jugador.EquipoId]">Ver Equipo</ion-button>
