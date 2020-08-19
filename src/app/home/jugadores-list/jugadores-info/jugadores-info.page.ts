@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Jugadores} from '../../../model/jugadores.model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {JugadoresService} from '../../../services/jugadores.service';
+import {ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-jugadores-info',
@@ -22,7 +23,9 @@ export class JugadoresInfoPage implements OnInit {
   }
 
   constructor(private activatedRoute: ActivatedRoute,
-              private jugadoresService: JugadoresService) { }
+              private jugadoresService: JugadoresService,
+              private toastCtrl: ToastController,
+              private router: Router) { }
 
   ngOnInit() {
     this.jugadoresService.getJugadorId(this.jugadorId).subscribe(jugador => {
@@ -32,5 +35,25 @@ export class JugadoresInfoPage implements OnInit {
 
   eliminarJugador(){
     this.jugadoresService.deleteJugador(this.jugador.id);
+  }
+
+  async showToast(msg) {
+    const toast = await this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    });
+    await toast.present();
+  }
+
+  actualizar(){
+    if(this.jugador.Numero === ''){
+      this.showToast('Por favor, rellene todos los campos')
+    } else {
+      this.jugadoresService.actualizarJugador(this.jugador).then(() => {
+        this.router.navigateByUrl('/home/jugadores-list');
+      });
+      this.showToast('Jugador actualizado')
+    }
+    this.jugadoresService.actualizarJugador(this.jugador);
   }
 }

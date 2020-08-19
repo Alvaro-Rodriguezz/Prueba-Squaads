@@ -19,7 +19,6 @@ export class JugadoresListPage implements OnInit {
   ngOnInit() {
     this.jugadoresService.getJugadores().subscribe(jugador => {
     this.jugadores = jugador;
-    console.log(this.jugadores);
     this.pipeArg1 = 'Nombre';
     this.pipeArg2 = ''
     this.loaded = true; });

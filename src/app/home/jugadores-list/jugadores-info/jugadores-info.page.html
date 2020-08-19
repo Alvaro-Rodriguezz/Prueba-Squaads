@@ -20,11 +20,15 @@
   </ion-grid>
   <ion-item>
     <ion-label  position="stacked">Equipo</ion-label>
-    <ion-input [(ngModel)]="jugador.Equipo"></ion-input>
+    <ion-label >{{jugador.Equipo}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label  position="stacked">Número</ion-label>
+    <ion-input [(ngModel)]="jugador.Numero"></ion-input>
   </ion-item>
   <ion-button [routerLink]="['/home/equipos-list', jugador.EquipoId]">Ver Equipo</ion-button>
 </ion-content>
 <ion-footer>
-  <ion-button color="secondary" expand="full">Actualizar</ion-button>
+  <ion-button color="secondary" expand="full" (click)="actualizar()">Actualizar</ion-button>
   <ion-button color="danger" expand="full" (click)="eliminarJugador()">Eliminar</ion-button>
 </ion-footer>

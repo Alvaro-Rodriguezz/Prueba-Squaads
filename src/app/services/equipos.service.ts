@@ -64,6 +64,7 @@ export class EquiposService {
     }
 
     deleteEquipo(id: string): Promise<void>{
+        //eliminar jugadores
         return this.equiposCollection.doc(id).delete();
     }
 }

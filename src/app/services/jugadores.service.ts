@@ -64,4 +64,15 @@ export class JugadoresService {
     deleteJugador(id: string): Promise<void>{
         return this.jugadoresCollection.doc(id).delete();
     }
+
+    actualizarJugador(jugador: Jugadores): Promise<void> {
+        return this.jugadoresCollection.doc(jugador.id).update({
+            Nombre: jugador.Nombre,
+            Apellidos: jugador.Apellidos,
+            Numero: jugador.Numero,
+            Equipo: jugador.Equipo,
+            Foto: jugador.Foto,
+            EquipoId: jugador.EquipoId
+        });
+    }
 }

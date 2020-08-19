@@ -64,6 +64,7 @@ export class LigasService {
     }
 
     deleteLiga(id: string): Promise<void>{
+        //eliminar equipos
         return this.ligasCollection.doc(id).delete();
     }
 
