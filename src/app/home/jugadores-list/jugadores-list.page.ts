@@ -12,12 +12,16 @@ export class JugadoresListPage implements OnInit {
 
   loaded = false;
   private jugadores: Jugadores[];
+  Arg1: 'Nombre';
+  Arg2: 't';
   constructor(private jugadoresService: JugadoresService) { }
 
   ngOnInit() {
     this.jugadoresService.getJugadores().subscribe(jugador => {
     this.jugadores = jugador;
     console.log(this.jugadores);
+    this.Arg1 = 'Nombre';
+    this.Arg2 = 't'
     this.loaded = true; });
   }
 

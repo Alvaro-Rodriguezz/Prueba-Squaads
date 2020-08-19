@@ -9,7 +9,7 @@
 
 <ion-content *ngIf="loaded">
   <ion-list>
-    <ion-item *ngFor="let jugador of jugadores | jugadoresPipe: 'Nombre'" [routerLink]="['/home/jugadores-list', jugador.id]">
+    <ion-item *ngFor="let jugador of (jugadores | jugadoresPipe: Arg1:Arg2)" [routerLink]="['/home/jugadores-list', jugador.id]">
       <ion-avatar><img src="{{jugador.Foto}}"></ion-avatar>
       &nbsp;{{jugador.Nombre}}
     </ion-item>
