@@ -34,7 +34,7 @@ export class JugadoresInfoPage implements OnInit {
   }
 
   eliminarJugador(){
-    this.jugadoresService.deleteJugador(this.jugador.id);
+    this.jugadoresService.deleteJugador(this.jugador.id, this.jugador.Foto);
     this.showToast('Jugador eliminado');
     this.navCtrl.back();
   }

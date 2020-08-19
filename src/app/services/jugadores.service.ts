@@ -5,6 +5,7 @@ import {map, take} from 'rxjs/operators';
 import {Jugadores} from '../model/jugadores.model';
 import DocumentReference = firebase.firestore.DocumentReference;
 import * as firebase from 'firebase';
+import {AngularFireStorage} from '@angular/fire/storage';
 
 
 @Injectable({
@@ -13,7 +14,9 @@ import * as firebase from 'firebase';
 export class JugadoresService {
     private Jugadores: Observable<Jugadores[]>;
     private jugadoresCollection: AngularFirestoreCollection<Jugadores>;
-    constructor(private angularFirestore: AngularFirestore) {
+    constructor(private storage: AngularFireStorage,
+                private angularFirestore: AngularFirestore) {
+
         this.jugadoresCollection = this.angularFirestore.collection<Jugadores>('Jugadores');
         this.Jugadores = this.jugadoresCollection.snapshotChanges().pipe(
             map(actions => {
@@ -61,7 +64,8 @@ export class JugadoresService {
         return this.jugadoresCollection.add(jugador);
     }
 
-    deleteJugador(id: string): Promise<void>{
+    deleteJugador(id: string, foto: string): Promise<void>{
+        this.storage.storage.refFromURL(foto).delete();
         return this.jugadoresCollection.doc(id).delete();
     }
 
