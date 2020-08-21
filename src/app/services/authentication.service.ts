@@ -21,14 +21,12 @@ export class AuthenticateService {
         return firebase.auth().signInWithEmailAndPassword(value.email, value.password)
     }
 
-    registerUser(value) {
-        return new Promise<any>((resolve, reject) => {
-            firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
-                .then(
-                    res => resolve(res),
-                    err => reject(err));
-        });
+    // No está de más tipar también los parámetros de entrada a la función. Te ayudará a evitar
+    // errores a la hora de usar esta función.
+    registerUser(value : {email : string, password : string} ) : Promise<firebase.auth.UserCredential> {
+        return firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
     }
+
     logoutUser() {
         return new Promise((resolve, reject) => {
             if (firebase.auth().currentUser) {
