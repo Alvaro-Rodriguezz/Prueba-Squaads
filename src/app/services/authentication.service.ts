@@ -23,7 +23,8 @@ export class AuthenticateService {
 
     // No está de más tipar también los parámetros de entrada a la función. Te ayudará a evitar
     // errores a la hora de usar esta función.
-    registerUser(value : {email : string, password : string} ) : Promise<firebase.auth.UserCredential> {
+    registerUser(value: { email: string, password: string }): Promise<firebase.auth.UserCredential> {
+        if (!value.email || !value.password) return Promise.reject({ msg : 'Registro de usuario sin email o password'})
         return firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
     }
 
