@@ -43,7 +43,10 @@ export class AuthenticateService {
         });
     }
 
-    userDetails() {
+
+    // A veces tampoco está de más tipar las funciones aunque typescript
+    // ya sepa lo que devuelve. Lo hace más sencillo de leer el servicio
+    userDetails() : firebase.User {
         return firebase.auth().currentUser;
     }
 }
