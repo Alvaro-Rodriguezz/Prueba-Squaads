@@ -53,7 +53,12 @@ export class LoginPage implements OnInit {
           console.log(res);
           console.log('Se inicio sesión correctamente');
           this.errorMessage = '';
-          this.navCtrl.navigateForward('/home').then((e) => {
+        this.navCtrl.navigateForward('/home').then((e) => {
+          // Este parámetro "e" queda muy raro. Nostros también abreviamos
+          // nombres de variables de vez en cuando, pero si en algo asíncrono pones
+          // "e" como nombre, a priori parece que es un objeto de "Error". Sin embargo, 
+          // en este caso es una booleana que representa "onfulfilled" según la docu. Solo
+          // después de mirar la docu es cuando uno dice hmmm vale el if de abajo está bien.
             if (e) {
               console.log('Navigation is successful!');
             } else {
