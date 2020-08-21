@@ -71,15 +71,11 @@ export class LoginPage implements OnInit {
         });
   }
 
-  goToRegisterPage() {
-    this.navCtrl.navigateForward('/register').then((e) => {
-      if (e) {
-        console.log('Navigation is successful!');
-      } else {
-        console.log('Navigation has failed!');
-      }
-      return false;
-    });
+  async goToRegisterPage() {
+    // Esta sería otra forma de mandar a hacer una promesa donde realmente
+    // vas a ignorar su resultado. Ya que no se estaba haciendo nada en caso de error
+    // y luego además returneabas false hacia afuera. 
+    await this.navCtrl.navigateForward('/register')
   }
 
 }
