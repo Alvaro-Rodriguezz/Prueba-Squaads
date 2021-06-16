@@ -12,7 +12,7 @@ Password: qwerty
 
 ## Español
 ### Introducción
-Prueba realizada para la empresa Squaads relacionado con la asignatura "Prácticas externas" de la Universidad de Las Palmas de Gran Canaria. El objetivo de esta prueba era crear una aplicación móvil en la cual el usuario puede hacer operaciones CRUD para modificar ligas de futbol, las cuales a su vez están compuestas de equipos con sus jugadores.
+Prueba realizada para la empresa Squaads relacionado con la asignatura "Prácticas externas" de la Universidad de Las Palmas de Gran Canaria. El objetivo de esta prueba era crear una aplicación móvil en la cual el usuario puede hacer operaciones CRUD para modificar ligas de futbol, las cuales, a su vez, están compuestas de equipos con sus jugadores.
 
 ### Hosting
 La aplicación esta actualmente hosteada en firebase y se puede acceder a ella mediante el siguiente [link](https://prueba-squaads-d7348.web.app/login) <br />
